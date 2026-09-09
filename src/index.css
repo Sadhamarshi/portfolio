@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-dark text-light antialiased;
+    position: relative;
+  }
+  
+  /* Dense starfield - Layer 1: Small distant stars */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    box-shadow: 
+      -200px -150px white, 100px -300px white, -350px 200px white, 250px 150px white,
+      -450px -100px white, 300px -250px white, -150px 300px white, 400px 100px white,
+      -300px -350px white, 150px -150px white, -500px 50px white, 350px 250px white,
+      -100px -400px white, 200px -100px white, -400px 150px white, 450px -50px white,
+      -250px -200px white, 50px -350px white, -350px 100px white, 300px 200px white,
+      -150px -300px white, 250px -200px white, -450px 250px white, 400px -100px white,
+      -350px -50px white, 100px -400px white, -200px 350px white, 500px 50px white,
+      -500px -200px white, 200px -350px white, -100px 400px white, 350px -150px white,
+      -400px -300px white, 300px -50px white, -250px 250px white, 150px 300px white,
+      -300px -150px white, 400px -300px white, -150px 150px white, 250px 350px white,
+      -450px 100px white, 50px -250px white, -350px 350px white, 450px 200px white,
+      -200px -250px white, 350px -200px white, -500px 300px white, 100px 250px white,
+      -100px -200px white, 450px -250px white, -300px 200px white, 200px 150px white,
+      -400px -150px white, 150px -300px white, -250px 350px white, 500px -100px white,
+      -350px -250px white, 250px -50px white, -150px 250px white, 350px 100px white,
+      -500px 150px white, 300px -150px white, -200px 300px white, 400px 250px white,
+      -450px -350px white, 50px -150px white, -100px 100px white, 150px 350px white,
+      -300px -100px white, 400px -200px white, -400px 350px white, 200px 200px white,
+      -250px -350px white, 300px -100px white, -150px 200px white, 450px 150px white,
+      -350px 150px white, 100px -200px white, -500px 250px white, 250px 300px white,
+      -180px -280px white, 280px -180px white, -380px 80px white, 180px 380px white,
+      -80px -380px white, 380px -80px white, -280px 280px white, 80px 180px white,
+      -480px -180px white, 180px -280px white, -80px 480px white, 480px 180px white,
+      -380px -280px white, 280px 80px white, -180px 180px white, 380px 280px white,
+      -280px -80px white, 80px -480px white, -480px 380px white, 280px 480px white,
+      -130px -230px white, 230px -330px white, -330px 130px white, 330px 230px white,
+      -430px -130px white, 130px -230px white, -230px 430px white, 430px 130px white,
+      -330px -430px white, 330px -130px white, -130px 330px white, 230px 330px white,
+      -60px -360px white, 360px -60px white, -260px 460px white, 460px 260px white,
+      -460px -60px white, 60px -460px white, -360px 360px white, 360px 460px white,
+      -160px -260px white, 260px -160px white, -360px 60px white, 160px 260px white,
+      -260px -360px white, 460px -360px white, -60px 260px white, 260px 60px white,
+      -410px -210px white, 210px -410px white, -110px 410px white, 410px 210px white,
+      -310px -310px white, 310px -110px white, -210px 210px white, 110px 310px white,
+      -510px -110px white, 110px -310px white, -410px 310px white, 310px 410px white,
+      -140px -340px white, 340px -140px white, -240px 440px white, 440px 240px white,
+      -440px -240px white, 140px -440px white, -340px 340px white, 240px 340px white,
+      -90px -290px white, 290px -90px white, -390px 190px white, 190px 390px white,
+      -490px -190px white, 390px -290px white, -190px 290px white, 90px 190px white,
+      -290px -390px white, 190px -90px white, -90px 490px white, 490px 90px white;
+    animation: twinkle 3s infinite;
+  }
+  
+  /* Dense starfield - Layer 2: Medium stars */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    box-shadow: 
+      -220px -180px white, 120px -320px white, -380px 220px white, 280px 180px white,
+      -420px -120px white, 320px -280px white, -180px 320px white, 420px 120px white,
+      -320px -380px white, 180px -180px white, -480px 80px white, 380px 280px white,
+      -120px -420px white, 220px -120px white, -420px 180px white, 480px -80px white,
+      -280px -220px white, 80px -380px white, -380px 120px white, 320px 220px white,
+      -180px -320px white, 280px -220px white, -480px 280px white, 420px -120px white,
+      -380px -80px white, 120px -420px white, -220px 380px white, 480px 80px white,
+      -480px -220px white, 220px -380px white, -120px 420px white, 380px -180px white,
+      -420px -320px white, 320px -80px white, -280px 280px white, 180px 320px white,
+      -320px -180px white, 420px -320px white, -180px 180px white, 280px 380px white,
+      -480px 120px white, 80px -280px white, -380px 380px white, 480px 220px white,
+      -220px -280px white, 380px -220px white, -480px 320px white, 120px 280px white,
+      -120px -220px white, 480px -280px white, -320px 220px white, 220px 180px white,
+      -420px -180px white, 180px -320px white, -280px 380px white, 480px -120px white,
+      -380px -280px white, 280px -80px white, -180px 280px white, 380px 120px white,
+      -480px 180px white, 320px -180px white, -220px 320px white, 420px 280px white,
+      -420px -380px white, 80px -180px white, -120px 120px white, 180px 380px white,
+      -320px -120px white, 420px -220px white, -420px 380px white, 220px 220px white,
+      -280px -380px white, 320px -120px white, -180px 220px white, 480px 180px white,
+      -380px 180px white, 120px -220px white, -480px 280px white, 280px 320px white,
+      -100px -350px white, 350px -100px white, -250px 400px white, 400px -250px white,
+      -400px 100px white, 100px 400px white, -350px -250px white, 250px 100px white,
+      -150px -400px white, 400px -150px white, -300px 350px white, 350px 300px white,
+      -450px -150px white, 150px -350px white, -200px 450px white, 450px 200px white,
+      -50px -300px white, 300px -50px white, -350px 50px white, 50px 350px white,
+      -500px -250px white, 250px -450px white, -150px 500px white, 500px 150px white,
+      -250px -150px white, 150px -250px white, -400px 200px white, 200px 400px white,
+      -350px -200px white, 200px -350px white, -100px 350px white, 350px 200px white,
+      -450px 250px white, 250px -500px white, -50px 450px white, 450px 50px white,
+      -300px -300px white, 300px -200px white, -200px 300px white, 200px 300px white,
+      -170px -370px white, 370px -170px white, -270px 470px white, 470px 270px white,
+      -470px -270px white, 170px -470px white, -370px 370px white, 270px 370px white,
+      -70px -270px white, 270px -70px white, -470px 170px white, 70px 470px white,
+      -370px -470px white, 470px -370px white, -170px 370px white, 370px 70px white,
+      -120px -370px white, 370px -120px white, -220px 420px white, 420px 220px white,
+      -420px -220px white, 120px -420px white, -320px 320px white, 220px 320px white;
+    animation: twinkle 4s infinite 0.5s;
+  }
+  
+  /* Nebula background layers */
+  #root {
+    position: relative;
+  }
+  
+  #root::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: 
+      radial-gradient(ellipse at 20% 20%, rgba(247, 59, 11, 0.05), transparent 40%),
+      radial-gradient(ellipse at 80% 80%, rgba(247, 59, 11, 0.04), transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(247, 59, 11, 0.02), transparent 50%);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Make all section headings uppercase and more prominent */
+  section h2 {
+    @apply uppercase tracking-wider;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-accent hover:bg-accent-hover text-white font-bold rounded-lg 
+           transition-all duration-300 
+           hover:shadow-lg hover:shadow-accent/30
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-accent/50 text-light font-bold rounded-lg 
+           hover:border-accent hover:text-accent hover:bg-accent/10 transition-all duration-300
+           hover:shadow-lg hover:shadow-accent/20
+           active:scale-95;
+  }
+
+  .card {
+    @apply bg-dark-100/80 backdrop-blur-sm border border-light/10 rounded-2xl p-6 md:p-8
+           transition-all duration-300 hover:border-accent/30;
+  }
+
+  .card-hover {
+    @apply hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10 
+           hover:border-accent/50 hover:bg-dark-100;
+  }
+
+  .heading-gradient {
+    @apply bg-gradient-to-r from-light to-light bg-clip-text text-transparent;
+  }
+
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent to-accent-hover bg-clip-text text-transparent;
+  }
+
+  .glow-accent {
+    text-shadow: 0 0 30px rgba(247, 59, 11, 0.3);
+  }
+
+  .border-glow {
+    @apply border-accent shadow-lg shadow-accent/30;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+}
+
+/* Custom Animations */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(247, 59, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(247, 59, 11, 0.6);
+  }
+}
+
+/* Animation Classes */
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0909;
+  border-left: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #F73B0B, #FF6B35);
+  border-radius: 6px;
+  border: 2px solid #0a0909;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FF6B35, #F73B0B);
+  box-shadow: 0 0 10px rgba(247, 59, 11, 0.5);
+}
+
+/* Selection */
+::selection {
+  background: rgba(247, 59, 11, 0.4);
+  color: #E4E4E1;
+  text-shadow: 0 0 10px rgba(247, 59, 11, 0.3);
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid #F73B0B;
+  outline-offset: 3px;
+  box-shadow: 0 0 20px rgba(247, 59, 11, 0.3);
+}
+
+/* Enhanced glow effects for interactive elements */
+button:hover, a:hover {
+  transition: all 0.3s ease;
+}
+
+/* Smooth fade in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
