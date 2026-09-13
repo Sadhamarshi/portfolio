@@ -74,7 +74,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="px-6 py-2.5 bg-accent hover:bg-accent-hover text-white font-bold text-sm uppercase tracking-wide rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/30"
+              className="lets-connect-btn px-6 py-2.5 bg-accent text-white font-bold text-sm uppercase tracking-wide rounded-lg transition-all duration-300"
             >
               Let's Connect
             </a>

@@ -2,8 +2,8 @@ import { projects } from '../data/portfolioData';
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className={`card card-hover group ${project.featured ? 'lg:col-span-2' : ''}`}>
-      <div className="space-y-6">
+    <div className="card card-hover group h-full flex flex-col">
+      <div className="space-y-6 flex-grow flex flex-col">
         {/* Project Number */}
         <div className="flex items-center justify-between">
           <span className="text-6xl font-bold text-accent/20 group-hover:text-accent/40 transition-colors">
@@ -23,7 +23,7 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* Project Info */}
-        <div className="space-y-4">
+        <div className="space-y-4 flex-grow">
           <h3 className="text-2xl md:text-3xl font-bold text-light group-hover:text-accent transition-colors">
             {project.title}
           </h3>
@@ -45,17 +45,19 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* CTA */}
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-light hover:text-accent transition-colors group/link font-medium"
-        >
-          <span>View Project</span>
-          <svg className="w-5 h-5 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+        <div className="pt-2">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-light hover:text-accent transition-colors group/link font-medium"
+          >
+            <span>View Project</span>
+            <svg className="w-5 h-5 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   );

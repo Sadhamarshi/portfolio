@@ -102,6 +102,15 @@ const Certifications = () => {
             <button
               onClick={() => setShowWorkshops(!showWorkshops)}
               className="flex items-center justify-center gap-3 mx-auto px-6 py-3 bg-dark-200 border border-light/10 rounded-lg hover:border-accent hover:bg-accent/5 transition-all duration-300 group"
+              style={{ transition: 'all 0.3s ease' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#F73B0B';
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(247, 59, 11, 0.6), 0 0 40px rgba(247, 59, 11, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.boxShadow = '';
+              }}
             >
               <span className="text-light font-medium">
                 {showWorkshops ? 'Hide' : 'View'} Workshop Certificates
